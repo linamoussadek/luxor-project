@@ -8,21 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 export function Component() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const video = document.querySelector('[data-scroll]') as HTMLVideoElement;
-      if (video) {
-        const scrolled = window.scrollY;
-        video.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
       <div className="flex flex-col min-h-[100dvh]">
         <header className="px-4 lg:px-6 h-20 flex items-center bg-primary text-primary-foreground">
@@ -31,23 +16,47 @@ export function Component() {
             <span className="sr-only">Soil Solutions</span>
           </Link>
           <nav className="ml-auto flex gap-6 sm:gap-8 lg:gap-10">
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="#services" onClick={(e) => {
+              e.preventDefault();
+              const servicesSection = document.getElementById('services');
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               SERVICES
             </Link>
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="#about" onClick={(e) => {
+              e.preventDefault();
+              const aboutSection = document.getElementById('about');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               ABOUT
             </Link>
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="#approach" onClick={(e) => {
+              e.preventDefault();
+              const approachSection = document.getElementById('approach');
+              if (approachSection) {
+                approachSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               APPROACH
             </Link>
-            <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+            <Link href="contact" onClick={(e) => {
+              e.preventDefault();
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
               CONTACT
             </Link>
           </nav>
         </header>
         <main className="flex-1 relative">
           <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-            <video className="absolute top-0 left-0 w-full h-full object-cover brightness-50" autoPlay loop muted data-scroll>
+            <video className="absolute top-0 left-0 w-full h-full object-cover brightness-50" autoPlay loop muted>
               <source src="/jumbotron-background.mp4" type="video/mp4"/>
               Your browser does not support the video tag.
             </video>
@@ -58,8 +67,8 @@ export function Component() {
                     SUSTAINABLE SOIL SOLUTIONS
                   </h1>
                   <p className="text-lg md:text-xl">
-                    At Parc Luxor, we are dedicated to improving soil health and enhancing agricultural productivity
-                    through innovative, data-driven treatments.
+                    At Parc Luxor, we are currently enhancing soil health through specialized treatments,
+                    preparing to expand our focus to include comprehensive agricultural development.
                   </p>
                   <Link
                       href="#"
@@ -73,7 +82,7 @@ export function Component() {
             </div>
           </section>
 
-          <section id="approach" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="container mx-auto text-left px-4 md:px-6 max-w-8xl">
               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
                 <div className="order-1 lg:order-2">
@@ -231,79 +240,45 @@ export function Component() {
           </section>
 
         </main>
-        <footer className="bg-primary text-primary-foreground p-6 md:py-12 w-full shrink-0">
+        <footer
+            className="bg-primary text-primary-foreground p-6 md:py-12 w-full shrink-0 flex justify-center items-center">
           <div className="text-center max-w-7xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
             <div className="grid gap-1">
               <h3 className="font-semibold">Company</h3>
-              <Link href="#" prefetch={false}>
-                About Us
-              </Link>
-              <Link href="#" prefetch={false}>
-                Our Team
-              </Link>
-              <Link href="#" prefetch={false}>
-                Careers
-              </Link>
-              <Link href="#" prefetch={false}>
-                News
-              </Link>
+              <Link href="#" prefetch={false}>About Us</Link>
+              <Link href="#" prefetch={false}>Our Team</Link>
+              <Link href="#" prefetch={false}>Careers</Link>
+              <Link href="#" prefetch={false}>News</Link>
             </div>
             <div className="grid gap-1">
               <h3 className="font-semibold">Services</h3>
-              <Link href="#" prefetch={false}>
-                Nutrient Balancing
-              </Link>
-              <Link href="#" prefetch={false}>
-                Microbial Inoculation
-              </Link>
-              <Link href="#" prefetch={false}>
-                Soil Remediation
-              </Link>
-              <Link href="#" prefetch={false}>
-                Erosion Control
-              </Link>
+              <Link href="#" prefetch={false}>Nutrient Balancing</Link>
+              <Link href="#" prefetch={false}>Microbial Inoculation</Link>
+              <Link href="#" prefetch={false}>Soil Remediation</Link>
+              <Link href="#" prefetch={false}>Erosion Control</Link>
             </div>
             <div className="grid gap-1">
               <h3 className="font-semibold">Resources</h3>
-              <Link href="#" prefetch={false}>
-                Blog
-              </Link>
-              <Link href="#" prefetch={false}>
-                Case Studies
-              </Link>
-              <Link href="#" prefetch={false}>
-                FAQs
-              </Link>
-              <Link href="#" prefetch={false}>
-                Contact
-              </Link>
+              <Link href="#" prefetch={false}>Blog</Link>
+              <Link href="#" prefetch={false}>Case Studies</Link>
+              <Link href="#" prefetch={false}>FAQs</Link>
+              <Link href="#" prefetch={false}>Contact</Link>
             </div>
             <div className="grid gap-1">
               <h3 className="font-semibold">Legal</h3>
-              <Link href="#" prefetch={false}>
-                Privacy Policy
-              </Link>
-              <Link href="#" prefetch={false}>
-                Terms of Service
-              </Link>
-              <Link href="#" prefetch={false}>
-                Cookie Policy
-              </Link>
+              <Link href="#" prefetch={false}>Privacy Policy</Link>
+              <Link href="#" prefetch={false}>Terms of Service</Link>
+              <Link href="#" prefetch={false}>Cookie Policy</Link>
             </div>
             <div className="grid gap-1">
               <h3 className="font-semibold">Connect</h3>
-              <Link href="#" prefetch={false}>
-                Phone: 123123123123
-              </Link>
-              <Link href="#" prefetch={false}>
-                Email: test@gmail.com
-              </Link>
-              <Link href="#" prefetch={false}>
-                Address: 123 test street
-              </Link>
+              <Link href="#" prefetch={false}>Phone: 123123123123</Link>
+              <Link href="#" prefetch={false}>Email: test@gmail.com</Link>
+              <Link href="#" prefetch={false}>Address: 123 test street</Link>
             </div>
           </div>
         </footer>
+
       </div>
   );
 }
