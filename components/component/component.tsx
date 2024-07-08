@@ -58,7 +58,7 @@ export function Component() {
                     SUSTAINABLE SOIL SOLUTIONS
                   </h1>
                   <p className="text-lg md:text-xl">
-                    At Parc Luxor, we're dedicated to improving soil health and enhancing agricultural productivity
+                    At Parc Luxor, we are dedicated to improving soil health and enhancing agricultural productivity
                     through innovative, data-driven treatments.
                   </p>
                   <Link
@@ -200,7 +200,7 @@ export function Component() {
                 <div className="space-y-4">
                   <div className="inline-block rounded-lg bg-custom-gold px-3 py-1 text-sm">GET IN TOUCH</div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    HAVE A QUESTION? LET'S TALK.
+                    HAVE A QUESTION? LETS TALK.
                   </h2>
                   <p className="text-muted-foreground md:text-xl">
                     Fill out the form below and one of our soil experts will reach out to you shortly.
