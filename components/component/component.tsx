@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from 'react';
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+
+
 
 export function Component() {
   return (
@@ -209,7 +210,7 @@ export function Component() {
                 <div className="space-y-4">
                   <div className="inline-block rounded-lg bg-custom-gold px-3 py-1 text-sm">GET IN TOUCH</div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    HAVE A QUESTION? LETS TALK.
+                    HAVE A QUESTION? LET&#39;S TALK.
                   </h2>
                   <p className="text-muted-foreground md:text-xl">
                     Fill out the form below and one of our soil experts will reach out to you shortly.
